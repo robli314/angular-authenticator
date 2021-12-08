@@ -5,9 +5,14 @@ import {
   NgModule,
   Type
 } from '@angular/core';
+import { Observable } from 'rxjs';
 import { DefaultAuthenticatorService } from './services/default-authenticator.service';
+import { LoginComponent } from './components/login/login.component';
 
-export interface IAuthenticatorService {}
+export interface IAuthenticatorService {
+  login(username: string, password: string): Observable<boolean>;
+  logout(): Observable<boolean>;
+}
 
 export interface IConfig {
   authenticatorService: Type<IAuthenticatorService>;
@@ -17,7 +22,9 @@ export const AUTHENTICATOR_SERVICE_TOKEN =
   new InjectionToken<IAuthenticatorService>('AUTHENTICATOR_SERVICE_TOKEN');
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LoginComponent
+  ],
   imports: [CommonModule],
 })
 export class AuthenticatorModule {
