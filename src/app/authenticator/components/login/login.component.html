@@ -1,5 +1,18 @@
-<form [formGroup]="loginForm" (ngSubmit)="authenticate()">
-  <input type="text" formControlName="username" />
-  <input type="password" formControlName="password" />
-  <button type="submit">Sign In</button>
-</form>
+<div class="container-login">
+  <div class="wrap-login">
+      <span class="login-form-title">Login</span>
+    <form
+      class="form-login"
+      [formGroup]="loginForm"
+      (ngSubmit)="authenticate()"
+    >
+      <div class="wrap-input">
+        <input type="text" formControlName="username" />
+      </div>
+      <div class="wrap-input">
+        <input type="password" formControlName="password" />
+      </div>
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+</div>

@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Ubuntu-Bold';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Ubuntu'), url('../src/assets/fonts/ubuntu.bold.ttf') format('woff');
+}
+
+body {
+    font-family: Ubuntu, "times new roman", times, roman, serif;
+}
+
