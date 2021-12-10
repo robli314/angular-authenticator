@@ -7,25 +7,49 @@
 }
 
 .login-form-title {
-    font-family: Ubuntu-Bold;
-    font-size: 1.8em;
-    text-transform: uppercase;
-    color: #403866;
-    line-height: 1.2;
-    width: 100%;
-    text-align: center;
-    display: block;
+  font-family: Ubuntu-Bold;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  color: #403866;
+  line-height: 1.2;
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-bottom: 51px;
 }
 
 .wrap-login {
-    width: 390px;
+  width: 390px;
 }
 
 .form-login {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .wrap-input {
-    width: 100%;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.input {
+  color: #403866;
+  line-height: 1.2;
+  font-size: 1.2em;
+  width: 100%;
+  padding: 0 20px 0 38px;
+  border-style: hidden;
+  background-color: #e6e6e6;
+}
+
+.form-item {
+  height: 62px;
+  font-family: Ubuntu-Bold;
+}
+.login-button {
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    background-color: #827ffe;
 }
