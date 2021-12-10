@@ -5,9 +5,10 @@ import {
   NgModule,
   Type
 } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { DefaultAuthenticatorService } from './services/default-authenticator.service';
 import { LoginComponent } from './components/login/login.component';
+import { DefaultAuthenticatorService } from './services/default-authenticator.service';
 
 export interface IAuthenticatorService {
   login(username: string, password: string): Observable<boolean>;
@@ -25,7 +26,7 @@ export const AUTHENTICATOR_SERVICE_TOKEN =
   declarations: [
     LoginComponent
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
 })
 export class AuthenticatorModule {
   static forRoot(config?: IConfig): ModuleWithProviders<AuthenticatorModule> {
