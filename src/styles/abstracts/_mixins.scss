@@ -1,0 +1,14 @@
+@mixin transition($property, $delay) {
+  -webkit-transition: $property $delay;
+  -o-transition: $property $delay;
+  -moz-transition: $property $delay;
+  transition: $property $delay;
+}
+
+@mixin transformScale($x, $y) {
+  -webkit-transform: scaleX($x) scaleY($y);
+  -moz-transform: scaleX($x) scaleY($y);
+  -ms-transform: scaleX($x) scaleY($y);
+  -o-transform: scaleX($x) scaleY($y);
+  transform: scaleX($x) scaleY($y);
+}
