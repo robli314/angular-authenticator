@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  Authenticator
+} from '../../models/authenticator';
+import { AUTHENTICATOR_SERVICE_TOKEN } from '../../tokens/authenticator-service.token';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +16,16 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required),
   });
 
-  constructor() {}
+  constructor(
+    @Inject(AUTHENTICATOR_SERVICE_TOKEN)
+    private authenticationService: Authenticator
+  ) {}
 
   ngOnInit(): void {}
 
   authenticate() {
-    console.log(this.loginForm.value);
+    this.authenticationService
+      .login(this.loginForm.value.username, this.loginForm.value.password)
+      .subscribe();
   }
 }
