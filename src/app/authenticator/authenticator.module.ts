@@ -13,6 +13,7 @@ import { DefaultAuthenticatorService } from './services/default-authenticator.se
 export interface IAuthenticatorService {
   login(username: string, password: string): Observable<boolean>;
   logout(): Observable<boolean>;
+  isAuthenticated(): Observable<boolean>;
 }
 
 export interface IConfig {

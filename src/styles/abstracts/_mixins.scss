@@ -5,10 +5,18 @@
   transition: $property $delay;
 }
 
-@mixin transformScale($x, $y) {
-  -webkit-transform: scaleX($x) scaleY($y);
-  -moz-transform: scaleX($x) scaleY($y);
-  -ms-transform: scaleX($x) scaleY($y);
-  -o-transform: scaleX($x) scaleY($y);
-  transform: scaleX($x) scaleY($y);
+@mixin transformScaleXY($x, $y) {
+    -webkit-transform: scaleX($x) scaleY($y);
+    -moz-transform: scaleX($x) scaleY($y);
+    -ms-transform: scaleX($x) scaleY($y);
+    -o-transform: scaleX($x) scaleY($y);
+    transform: scaleX($x) scaleY($y);
+}
+
+@mixin transformScale($value) {
+    -webkit-transform: scale($value);
+    -moz-transform: scale($value);
+    -ms-transform: scale($value);
+    -o-transform: scale($value);
+    transform: scale($value);
 }

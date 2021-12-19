@@ -6,6 +6,9 @@ export class DefaultAuthenticatorService implements IAuthenticatorService {
   constructor() {
     // not implemented yet
   }
+  isAuthenticated(): Observable<boolean> {
+    throw new Error('Method not implemented.');
+  }
   login(username: string, password: string): Observable<boolean> {
     throw new Error('Method not implemented.');
   }

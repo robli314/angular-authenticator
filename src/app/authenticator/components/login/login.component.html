@@ -24,7 +24,7 @@
         />
         <span class="focus-input"></span>
       </div>
-      <button class="login-button form-item" type="submit">Sign In</button>
+      <button [disabled]="loginForm.invalid" class="login-button form-item" type="submit">Sign In</button>
     </form>
   </div>
 </div>
