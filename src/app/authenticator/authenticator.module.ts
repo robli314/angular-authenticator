@@ -1,36 +1,17 @@
 import { CommonModule } from '@angular/common';
-import {
-  InjectionToken,
-  ModuleWithProviders,
-  NgModule,
-  Type
-} from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { LoginComponent } from './components/login/login.component';
+import { Config } from './models/config';
 import { DefaultAuthenticatorService } from './services/default-authenticator.service';
-
-export interface IAuthenticatorService {
-  login(username: string, password: string): Observable<boolean>;
-  logout(): Observable<boolean>;
-  isAuthenticated(): Observable<boolean>;
-}
-
-export interface IConfig {
-  authenticatorService: Type<IAuthenticatorService>;
-}
-
-export const AUTHENTICATOR_SERVICE_TOKEN =
-  new InjectionToken<IAuthenticatorService>('AUTHENTICATOR_SERVICE_TOKEN');
+import { AUTHENTICATOR_SERVICE_TOKEN } from './tokens/authenticator-service.token';
 
 @NgModule({
-  declarations: [
-    LoginComponent
-  ],
+  declarations: [LoginComponent],
   imports: [CommonModule, ReactiveFormsModule],
 })
 export class AuthenticatorModule {
-  static forRoot(config?: IConfig): ModuleWithProviders<AuthenticatorModule> {
+  static forRoot(config?: Config): ModuleWithProviders<AuthenticatorModule> {
     return {
       ngModule: AuthenticatorModule,
       providers: [
