@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import {
   Authenticator
 } from '../../models/authenticator';
@@ -18,14 +19,21 @@ export class LoginComponent implements OnInit {
 
   constructor(
     @Inject(AUTHENTICATOR_SERVICE_TOKEN)
-    private authenticationService: Authenticator
-  ) {}
+    private authenticationService: Authenticator,
+    private router: Router
+  ) {
+    // not implemented yet
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // not implemented yet
+  }
 
   authenticate() {
     this.authenticationService
       .login(this.loginForm.value.username, this.loginForm.value.password)
-      .subscribe();
+      .subscribe(() => {
+        this.router.navigate(['/'])
+      });
   }
 }

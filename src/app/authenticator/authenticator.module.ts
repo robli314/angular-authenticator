@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
@@ -8,7 +9,7 @@ import { AUTHENTICATOR_SERVICE_TOKEN } from './tokens/authenticator-service.toke
 
 @NgModule({
   declarations: [LoginComponent],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
 })
 export class AuthenticatorModule {
   static forRoot(config?: Config): ModuleWithProviders<AuthenticatorModule> {
